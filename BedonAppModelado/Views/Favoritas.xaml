@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="BedonAppModelado.Views.Favoritas"
+             Title="Favoritas">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem x:Name="Add"
+                     Clicked="Add_Clicked"
+                     IconImageSource="{FontImage Glyph='+', Color=White, Size=22}" />
+    </ContentPage.ToolbarItems>
+    <Grid BackgroundColor="#1B2631">
+        <CollectionView x:Name="FrasesF"
+                        Margin="20"
+                        SelectionMode="None">
+            <CollectionView.ItemsLayout>
+                <LinearItemsLayout Orientation="Vertical" ItemSpacing="10"/>
+            </CollectionView.ItemsLayout>
+
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <StackLayout>
+                        <StackLayout>
+                            <Label Text="{Binding TextoFrase}" FontAttributes="Bold" TextColor="White"/>
+                            <Label Text="{Binding Author}" FontAttributes="Italic" TextColor="#F1C40F"/>
+                        </StackLayout>
+                    </StackLayout>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </Grid>
+</ContentPage>
